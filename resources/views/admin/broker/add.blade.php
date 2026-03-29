@@ -62,9 +62,12 @@
 
       </div>
 
-      <button class="btn btn-success mt-3">
-        Save Broker
-      </button>
+      <div class="col-md-4 mt-3">
+        <div class="d-flex gap-2 mb-3">
+          <button type="submit" class="btn btn-primary w-md">Save Broker</button>
+          <a class="btn btn-light w-md" href="{{ URL::to('/admin/broker') }}">Back</a>
+        </div>
+      </div>
 
     </form>
 

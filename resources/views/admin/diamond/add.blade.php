@@ -223,6 +223,8 @@
                     <span id="btnLoader" style="display:none;">
                         <i class="fa fa-spinner fa-spin"></i> Uploading...
                     </span>
+
+                    <a class="btn btn-light w-md" href="{{ URL::to('/admin/diamonds') }}">Back</a>
                 </div>
 
                 </form>

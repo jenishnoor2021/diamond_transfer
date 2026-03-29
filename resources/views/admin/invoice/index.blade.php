@@ -61,6 +61,8 @@
                 <i class="fa fa-trash"></i>
               </button>
             </form>
+
+            <a href="{{ route('admin.invoice.preview', $invoice->id) }}" class="btn btn-outline-success waves-effect waves-light" target="_blank"><i class="fa fa-eye"></i></a>
           </td>
 
           <td>{{$invoice->invoice_no}}</td>

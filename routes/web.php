@@ -199,7 +199,7 @@ Route::group(['middleware' => ['auth', 'usersession']], function () {
         Route::post('/invoice/store', [AdminInvoiceController::class, 'store'])->name('invoice.store');
         Route::get('/invoice/{id}/edit', [AdminInvoiceController::class, 'edit'])->name('invoice.edit');
         Route::post('/invoice/{id}/update', [AdminInvoiceController::class, 'update'])->name('invoice.update');
-        Route::get('/invoice/preview/{id}', [AdminInvoiceController::class, 'preview']);
+        Route::get('/invoice/preview/{id}', [AdminInvoiceController::class, 'preview'])->name('invoice.preview');
         Route::post('/invoice/{id}/update-client', [AdminInvoiceController::class, 'updateClient'])->name('invoice.updateClient');
         Route::post('/invoice/delete-item', [AdminInvoiceController::class, 'deleteItem']);
         Route::delete('/invoice/{id}/delete', [AdminInvoiceController::class, 'destroy'])->name('invoice.delete');
