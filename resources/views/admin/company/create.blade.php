@@ -125,6 +125,35 @@
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="mb-3">
+                            <label for="igst">IGST</label>
+                            <input type="number" name="igst" class="form-control" id="igst" placeholder="Enter IGST" value="{{ old('igst') }}" required>
+                            @if ($errors->has('igst'))
+                            <div class="error text-danger">{{ $errors->first('igst') }}</div>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="mb-3">
+                            <label for="invoice_prefix">Invoice Prifix</label>
+                            <input type="text" name="invoice_prefix" class="form-control" id="invoice_prefix">
+                            @if ($errors->has('invoice_prefix'))
+                            <div class="error text-danger">{{ $errors->first('invoice_prefix') }}</div>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="mb-3">
+                            <label for="invoice_series">Invoice Series</label>
+                            <input type="text" name="invoice_series" class="form-control" id="invoice_series" placeholder="Enter invoice series">
+                            @if ($errors->has('invoice_series'))
+                            <div class="error text-danger">{{ $errors->first('invoice_series') }}</div>
+                            @endif
+                        </div>
+                    </div>
+                </div>
 
                 <div class="row">
                     <div class="col-md-3">
@@ -213,6 +242,9 @@
                     required: true,
                 },
                 sgst: {
+                    required: true,
+                },
+                igst: {
                     required: true,
                 },
             },

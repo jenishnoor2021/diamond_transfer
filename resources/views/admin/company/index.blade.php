@@ -57,6 +57,7 @@ use App\Models\Process;
                             <th>Address</th>
                             <th>CGST</th>
                             <th>SGST</th>
+                            <th>IGST</th>
                         </tr>
                     </thead>
 
@@ -94,6 +95,7 @@ use App\Models\Process;
                             </td>
                             <td>{{ $company->cgst }}</td>
                             <td>{{ $company->sgst }}</td>
+                            <td>{{ $company->igst }}</td>
                         </tr>
                         @endforeach
                     </tbody>

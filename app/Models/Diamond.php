@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\BrokerMemoItem;
+use App\Models\Sale;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -42,5 +43,10 @@ class Diamond extends Model
     public function diamondTransfers()
     {
         return $this->hasMany(DiamondTransfer::class);
+    }
+
+    public function sale()
+    {
+        return $this->hasOne(Sale::class, 'diamond_id');
     }
 }

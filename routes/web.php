@@ -11,15 +11,14 @@ use App\Http\Controllers\AdminDesignationController;
 use App\Http\Controllers\AdminDiamondController;
 use App\Http\Controllers\AdminDiamondTransferController;
 use App\Http\Controllers\AdminPolishController;
+use App\Http\Controllers\AdminInvoiceController;
 use App\Http\Controllers\AdminSaleDiamondsController;
 use App\Http\Controllers\AdminShapeController;
 use App\Http\Controllers\AdminSymmetryController;
-use App\Http\Controllers\AdminWorkerController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
-use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
@@ -193,7 +192,19 @@ Route::group(['middleware' => ['auth', 'usersession']], function () {
         Route::get("/sell-diamonds", [AdminSaleDiamondsController::class, 'sellDiamondsList'])->name('sell.diamonds');
         Route::get('/owner-sale/{type?}', [AdminSaleDiamondsController::class, 'ownerSalePage'])->name('owner.sale');
         Route::get('/sales/delete/{id}', [AdminSaleDiamondsController::class, 'delete'])->name('sales.delete');
+
+        Route::get('/invoices', [AdminInvoiceController::class, 'index'])->name('invoice.index');
+        Route::get('/add-invoice', [AdminInvoiceController::class, 'add'])->name('add.invoice');
+        Route::post('/invoice/add-diamond', [AdminInvoiceController::class, 'addDiamond']);
+        Route::post('/invoice/store', [AdminInvoiceController::class, 'store'])->name('invoice.store');
+        Route::get('/invoice/{id}/edit', [AdminInvoiceController::class, 'edit'])->name('invoice.edit');
+        Route::post('/invoice/{id}/update', [AdminInvoiceController::class, 'update'])->name('invoice.update');
+        Route::get('/invoice/preview/{id}', [AdminInvoiceController::class, 'preview']);
+        Route::post('/invoice/{id}/update-client', [AdminInvoiceController::class, 'updateClient'])->name('invoice.updateClient');
+        Route::post('/invoice/delete-item', [AdminInvoiceController::class, 'deleteItem']);
+        Route::delete('/invoice/{id}/delete', [AdminInvoiceController::class, 'destroy'])->name('invoice.delete');
     });
+    // Route::post('/get-sale-diamond', [AdminInvoiceController::class, 'getSaleDiamond']);
 });
 
 //Clear Cache facade value:

@@ -128,7 +128,7 @@
             <li>
                 <a href="/admin/sell-diamonds" class="waves-effect">
                     <i class="bx bx-diamond"></i>
-                    <span>Sell Diamonds</span>
+                    <span>Sold Diamonds</span>
                 </a>
             </li>
 
@@ -141,9 +141,9 @@
 
             @if(Session::get('user')['role'] == 'Admin')
             <li>
-                <a href="/admin/sale-bill" class="waves-effect">
+                <a href="/admin/add-invoice" class="waves-effect">
                     <i class="bx bx-diamond"></i>
-                    <span>Sale Bill</span>
+                    <span>Invoice Generate</span>
                 </a>
             </li>
 
