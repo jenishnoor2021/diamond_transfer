@@ -66,6 +66,16 @@
       </div>
 
       <div class="col-md-4 mt-3">
+        <label>Client GST No <span class="text-danger">*</span></label>
+        <input type="text" name="client_gst_no" class="form-control">
+      </div>
+
+      <div class="col-md-4 mt-3">
+        <label>GST Name</label>
+        <input type="text" name="client_gst_name" class="form-control">
+      </div>
+
+      <div class="col-md-4 mt-3">
         <div class="d-flex gap-2 mb-3">
           <button type="submit" class="btn btn-primary w-md">Save & Add Diamonds</button>
           <a class="btn btn-light w-md" href="{{ URL::to('/admin/invoices') }}">Back</a>
@@ -104,6 +114,9 @@
         },
         client_state: {
           required: true
+        },
+        client_gst_no: {
+          required: true
         }
       },
 
@@ -124,7 +137,10 @@
           required: "Enter address"
         },
         client_state: {
-          required: true
+          required: "Select state"
+        },
+        client_gst_no: {
+          required: "Enter GST number"
         }
       },
 

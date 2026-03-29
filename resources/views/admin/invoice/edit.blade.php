@@ -66,6 +66,16 @@
         </div>
 
         <div class="col-md-4 mt-3">
+          <label>Client GST No <span class="text-danger">*</span></label>
+          <input type="text" name="client_gst_no" class="form-control" value="{{ $invoice->client_gst_no }}">
+        </div>
+
+        <div class="col-md-4 mt-3">
+          <label>GST Name</label>
+          <input type="text" name="client_gst_name" class="form-control" value="{{ $invoice->client_gst_name }}">
+        </div>
+
+        <div class="col-md-4 mt-3">
           <div class="d-flex gap-2 mb-3">
             <button type="submit" class="btn btn-primary w-md">Update Client</button>
             <a class="btn btn-light w-md" href="{{ URL::to('/admin/invoices') }}">Back</a>
@@ -171,6 +181,12 @@
         },
         client_address: {
           required: true
+        },
+        client_state: {
+          required: true
+        },
+        client_gst_no: {
+          required: true
         }
       },
 
@@ -189,6 +205,12 @@
         },
         client_address: {
           required: "Enter address"
+        },
+        client_state: {
+          required: "Select state"
+        },
+        client_gst_no: {
+          required: "Enter GST number"
         }
       },
 

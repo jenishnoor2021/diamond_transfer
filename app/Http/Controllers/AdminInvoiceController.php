@@ -92,6 +92,8 @@ class AdminInvoiceController extends Controller
                 'client_name' => $request->client_name,
                 'client_address' => $request->client_address,
                 'client_mobile' => $request->client_mobile,
+                'client_gst_no' => $request->client_gst_no,
+                'client_gst_name' => $request->client_gst_name ?? null,
                 'sub_total' => 0,
                 'tax' => 0,
                 'grand_total' => 0,
@@ -214,6 +216,8 @@ class AdminInvoiceController extends Controller
             'client_mobile' => $request->client_mobile,
             'client_address' => $request->client_address,
             'client_state' => $request->client_state,
+            'client_gst_no' => $request->client_gst_no,
+            'client_gst_name' => $request->client_gst_name ?? null,
         ]);
 
         return back()->with('success', 'Client updated successfully');

@@ -59,9 +59,10 @@
     <tr>
       <td width="60%">
         <b>To,</b><br>
-        {{ $invoice->client_name }}<br>
-        {{ $invoice->client_address }}<br>
-        {{ $invoice->client_mobile }}
+        Name : {{ $invoice->client_name }}<br>
+        Address : {{ $invoice->client_address }}<br>
+        Mobile : {{ $invoice->client_mobile }}<br>
+        GST No : {{ $invoice->client_gst_no }}<br>
       </td>
 
       <td width="40%">
